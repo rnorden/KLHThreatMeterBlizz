@@ -1,18 +1,19 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
 ..\FrameXML\UI.xsd">
 
-<Frame name="TargetFrameNumericalThreat" hidden="true" parent="TargetFrame">
+<Frame name="TargetFrameNumericalThreat" hidden="false" parent="UIParent" movable="true" enableMouse="true">
 	<Size>
 		<AbsDimension x="49" y="18"/>
 	</Size>
 	<Anchors>
-		<Anchor point="BOTTOM" relativePoint="TOP">
+		<!--<Anchor point="BOTTOM" relativePoint="TOP">
 			<Offset x="-50" y="-22"/>
-		</Anchor>
+		</Anchor>-->
+		<Anchor point="CENTER" />
 	</Anchors>
 	<Layers>
-		<Layer level="BACKGROUND">
-			<FontString name="$parentValue" inherits="GameFontHighlight" text="100%" parentKey="text">
+		<Layer level="ARTWORK">
+			<FontString name="$parentValue" inherits="GameFontNormal" text="100%" parentKey="text">
 				<Anchors>
 					<Anchor point="TOP">
 						<Offset x="0" y="-4"/>
@@ -30,12 +31,12 @@
 				</Anchors>
 			</Texture>
 		</Layer>
-		<Layer level="ARTWORK">
-			<Texture file="Interface\AddOns\KLHThreatMeterBlizz\NumericThreatBorder">
-				<TexCoords left="0" right="0.765625" top="0" bottom="0.5625"/>
-			</Texture>
-		</Layer>
 	</Layers>
+	<Scripts>
+		<OnMouseDown>this:StartMoving();</OnMouseDown>
+		<OnMouseUp>  this:StopMovingOrSizing();</OnMouseUp>
+		<OnDragStop> this:StopMovingOrSizing();</OnDragStop>
+	</Scripts>	
 </Frame>
 
 </Ui>
