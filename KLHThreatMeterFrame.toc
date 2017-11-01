@@ -1,0 +1,10 @@
+## Interface: 11200
+## Author: moh - modified by Pucchini on vanillagaming.org
+## Title: KLHThreatmeterFrame
+## Description: Movable frame that shows the threat % of your character according to KTM data
+## Version: 1.0
+## LoadOnDemand: 1
+## LoadWith: KLHThreatMeter
+
+Threat.xml
+KTM_BlizzardUI.lua
